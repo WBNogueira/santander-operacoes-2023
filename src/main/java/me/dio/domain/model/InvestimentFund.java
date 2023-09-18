@@ -10,7 +10,6 @@ public class InvestimentFund {
     private Date investimentDate;
     private BigDecimal InvestimentValue;
     private int interestRate;
-    private BigDecimal monthlyPayment;
     private BigDecimal incomes;
 
     public Long getId() {
@@ -51,14 +50,6 @@ public class InvestimentFund {
 
     public void setInterestRate(int interestRate) {
         this.interestRate = interestRate;
-    }
-
-    public BigDecimal getMonthlyPayment() {
-        return monthlyPayment;
-    }
-
-    public void setMonthlyPayment(BigDecimal monthlyPayment) {
-        this.monthlyPayment = monthlyPayment;
     }
 
     public BigDecimal getIncomes() {

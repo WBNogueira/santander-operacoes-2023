@@ -6,14 +6,16 @@ Java RESTful API criada para desafio de projeto para o Bootcamp Santander.
 ```mermaid
 classDiagram
     class User {
+        - id: Long
         - name: String
         - account: Account
         - loans: Loan
         - application: Application
-        - card: CreditCard
+        - creditCard: CreditCard
     }
 
     class Account {
+        - id: Long
         - number: String
         - agency: String
         - balance: Double
@@ -21,28 +23,31 @@ classDiagram
     }
 
     class Loan {
+        - id: Long
         - number: String
         - loanValue: Double
-        - numberTerm: Int
-        - rate: Double
-        - pay: Double
+        - loanDuration: Integer
+        - interestRate: BigDecimal
+        - monthlyPayment: BigDecimal
     }
 
-    class Application {
+    class InvestimentFund {
+        - id: Long
         - number: String
-        - applicationValue: Double
+        - investimentValue: Double
         - deadline: Int
-        - rate: Double
-        - recive: Double
+        - interestRate: Double
+        - incomes: Double
     }
 
     class CreditCard {
+        - id: Long
         - number: String
         - limit: Double
     }
 
     User "1" *-- "1" Account : has
     User "1" *-- "N" Loan : has
-    User "1" *-- "N" Application : has
+    User "1" *-- "N" InvestimentFund : has
     User "1" *-- "1" CreditCard : has
 ```
