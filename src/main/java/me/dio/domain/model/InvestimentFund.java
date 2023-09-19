@@ -1,16 +1,29 @@
 package me.dio.domain.model;
 
+import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
+@Entity(name = "tb_investimentFund")
 public class InvestimentFund {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(unique = true)
     private String number;
     private Date investimentDate;
+
+    @Column(precision = 13, scale = 2)
     private BigDecimal InvestimentValue;
-    private int interestRate;
-    private BigDecimal incomes;
+
+    @Column(precision = 13, scale = 2)
+    private BigDecimal interestRate;
+
+//    @Column(precision = 13, scale = 2)
+//    private BigDecimal incomes;
 
     public Long getId() {
         return id;
@@ -44,19 +57,12 @@ public class InvestimentFund {
         InvestimentValue = investimentValue;
     }
 
-    public int getInterestRate() {
+    public BigDecimal getInterestRate() {
         return interestRate;
     }
 
-    public void setInterestRate(int interestRate) {
+    public void setInterestRate(BigDecimal interestRate) {
         this.interestRate = interestRate;
     }
 
-    public BigDecimal getIncomes() {
-        return incomes;
-    }
-
-    public void setIncomes(BigDecimal incomes) {
-        this.incomes = incomes;
-    }
 }

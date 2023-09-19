@@ -18,14 +18,14 @@ classDiagram
         - id: Long
         - number: String
         - agency: String
-        - balance: Double
-        - limit: Double
+        - balance: BigDecimal
+        - limit: BigDecimal
     }
 
     class Loan {
         - id: Long
         - number: String
-        - loanValue: Double
+        - loanValue: BigDecimal
         - loanDuration: Integer
         - interestRate: BigDecimal
         - monthlyPayment: BigDecimal
@@ -34,16 +34,15 @@ classDiagram
     class InvestimentFund {
         - id: Long
         - number: String
-        - investimentValue: Double
+        - investimentValue: BigDecimal
         - deadline: Int
-        - interestRate: Double
-        - incomes: Double
+        - interestRate: BigDecimal
     }
 
     class CreditCard {
         - id: Long
         - number: String
-        - limit: Double
+        - limit: BigDecimal
     }
 
     User "1" *-- "1" Account : has

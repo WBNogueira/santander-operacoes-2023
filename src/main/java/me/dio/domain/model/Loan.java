@@ -1,14 +1,31 @@
 package me.dio.domain.model;
 
+import jakarta.persistence.*;
+import org.hibernate.annotations.Formula;
+
 import java.math.BigDecimal;
 
+@Entity(name = "tb_loan")
 public class Loan {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(unique = true)
     private String number;
+
+    @Column(precision = 13, scale = 2)
     private BigDecimal loanValue;
     private Integer loanDuration;
+
+
+    @Column(precision = 13, scale = 2)
     private BigDecimal interestRate;
+
+
+    @Column(precision = 13, scale = 2)
+    //@Formula(Math().round())
     private BigDecimal monthlyPayment;
 
     public Long getId() {
